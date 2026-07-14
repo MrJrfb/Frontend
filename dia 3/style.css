@@ -1,0 +1,63 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(238, 237, 237);
+}
+.container{
+    width: 90%;
+    height: max-content;
+    margin: auto;
+    position: relative;
+}
+
+.capa-left, .capa-right{
+    width: 50%;
+    height: max-content;
+    float: left; /**/
+}
+
+.capa-right{
+    background-color: rgb(221, 221, 221);
+    margin-top: 7.3%;
+}
+
+h1{
+    font-size: 28pt;
+}
+
+.img-w{
+    width: 95%;
+    height: auto;
+    margin-top: -10px;
+}
+
+h2{
+    margin-left: 5%;
+}
+
+input{
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+button{
+    margin-top: 20px;
+    width: 90%;
+    height: 30px;
+    background-color: rgb(42,110,255);
+    color: rgb(255,255,255);
+    border-radius: 15px;
+    margin-left: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: green;
+    display: block;
+    text-align: center;
+}
