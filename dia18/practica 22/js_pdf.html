@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Documento PDF</title>
+        <meta charset="UTF-8">
+
+        <!--jQuery-->
+        <script src="https://code.jquery.com/jquery-4.0.0.js"
+            integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+            crossorigin="anonymous"></script>
+
+        <!--jsPDF (bundle UMD)-->        
+        <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+        <!--html2canavas: lo necesita doc.html() para capturar el contenido-->
+        <script src="https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <h2>Ejemplo de uso de jsPDF</h2>
+            <p>Esto es otro texto</p>
+        </div> 
+        <button id="btnGenerar">Generar PDF</button>
+        <script>
+            $(document).ready(function() {
+                
+                $("#btnGenerar").on("click", function(){
+
+                    //El bundle UMD expone la libreria en window.jspdf
+                    const{jsPDF} = window.jspdf;
+
+                    //A4, vertical, en milimetros (valores por defecto)
+                    const doc = new jsPDF();
+
+                    //Volcar el contenido del div al PDF
+                    doc.html(document.getElementById("content"),{
+                        callback: function(doc){
+                            doc.save("documento.pdf");
+                        },
+                        x: 10,
+                        y: 10
+                    });
+                });
+            });
+        </script>       
+    </body>
+</html>

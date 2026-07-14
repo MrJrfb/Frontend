@@ -1,0 +1,58 @@
+<script>
+    class Calculadora{
+        #num1;
+        #num2;
+        #resultado;
+        constructor(){
+            this.#num1 = 0;
+            this.#num2 = 0;
+            this.#resultado = 0;
+        }
+
+        cargarNumeros(x,y){
+            this.#num1 = x;
+            this.#num2 = y;
+
+        }
+
+        sumar(){
+            this.#resultado = this.#num1 + this.#num2;
+            return this.#resultado;
+        }
+
+        restar(){
+            this.#resultado = this.#num1 - this.#num2;
+            /*
+            if (this.#num1 >= this.#num2){
+                this.#resultado = this.#num1 - this.#num2;
+            }
+            else{
+                this.#resultado = this.#num2 - this.#num1;
+            }
+            */
+            return this.#resultado;
+        }
+
+        dividir(){
+            this.#resultado = this.#num1 / this.#num2;
+            return this.#resultado
+        }
+
+        multiplicar(){
+            this.#resultado = this.#num1 * this.#num2;
+            return this.#resultado
+        }
+    }
+
+
+</script>
+<h1>Calculadora Casio</h1>
+<script>
+    casio = new Calculadora();
+    casio.cargarNumeros(45,7);
+    document.write("La suma es: " + casio.sumar());
+    document.write("<br>La resta es: " + casio.restar());
+    document.write("<br>La division es: " + casio.dividir());
+    document.write("<br>La multiplicacion es: " + casio.multiplicar());
+
+</script>

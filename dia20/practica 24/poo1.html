@@ -1,0 +1,34 @@
+<script>
+    class Persona{
+        #nombre = "";
+        constructor(nombre){
+            this.#nombre = nombre;
+        }
+        mostrarDatos(){
+            return this.#nombre;
+        }
+        cambiarNombre(n){
+            if(n != ""){
+                this.#nombre = n;
+            }
+        }
+    }
+
+    class Alumno extends Persona{
+        constructor(nombre, matricula){
+            super(nombre); // super apunta a nombre de clase persona
+            this.matricula = matricula;
+        }
+
+        mostrarDatos(){
+            return super.mostrarDatos() + ", matricula: " + this.matricula;
+        }
+    }
+
+</script>
+<head>Prueba de POO en Javascript</head>
+<script>
+    alumno1 = new Alumno("Moises", "M-123"); //new apunta a la clase Alumno
+    alumno1.cambiarNombre("Pepe");
+    document.write("Datos del alumno: " + alumno1.mostrarDatos());
+</script>
