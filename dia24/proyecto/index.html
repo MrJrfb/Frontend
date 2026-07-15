@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStudio PY | Desarrollo Web y Software a Medida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                        DevStudio<span class="text-white font-black">.PY</span>
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">Inicio</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">Servicios</a>
+                    <a href="#planes" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">Planes</a>
+                    <a href="#cotizador" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">Cotizador</a>
+                    <a href="#formulario" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium">Contacto</a>
+                </nav>
+
+                <div class="flex md:hidden">
+                    <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 p-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Inicio</a>
+                <a href="#servicios" class="block px-3 p-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Servicios</a>
+                <a href="#planes" class="block px-3 p-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Planes</a>
+                <a href="#cotizador" class="block px-3 p-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Cotizador</a>
+                <a href="#formulario" class="block px-3 p-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main>
+
+        <!-- SECCIÓN: Hero -->
+        <section id="hero" class="relative overflow-hidden min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 md:py-20 lg:py-24">
+            <!-- Destellos estéticos de fondo -->
+            <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Columna Izquierda: Textos y CTAs -->
+                    <div class="text-center md:text-left space-y-6 max-w-xl mx-auto md:mx-0">
+                        <div class="inline-flex items-center space-x-2 bg-gray-800/60 border border-gray-700 px-3 py-1 rounded-full text-xs font-medium text-teal-400">
+                            <span>🚀 Impulsando el entorno digital en Paraguay</span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none">
+                            Sitios web profesionales que hacen crecer tu <span class="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">MIPYME</span>
+                        </h1>
+                        
+                        <p class="text-lg text-gray-400 font-normal leading-relaxed">
+                            En DevStudio PY diseñamos páginas web y software a medida adaptados al mercado paraguayo. Posicioná tu negocio, aumentá tus ventas y digitalizá tus operaciones con tecnología ágil.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                            <a href="#formulario" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-lg shadow-lg hover:from-blue-500 hover:to-teal-400 transform hover:-translate-y-0.5 transition-all text-center">
+                                Solicitar Presupuesto
+                            </a>
+                            <a href="#planes" class="w-full sm:w-auto px-8 py-4 bg-gray-800 text-gray-200 font-semibold rounded-lg border border-gray-700 hover:bg-gray-700 hover:text-white transform hover:-translate-y-0.5 transition-all text-center">
+                                Ver Planes
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna eye-candy Derecha: Mockup Dev con Tailwind -->
+                    <div class="w-full max-w-md md:max-w-none mx-auto lg:px-4">
+                        <div class="relative bg-gray-800/40 border border-gray-700/60 rounded-xl shadow-2xl p-4 backdrop-blur-sm overflow-hidden">
+                            <div class="flex items-center space-x-2 border-b border-gray-700/50 pb-3 mb-4">
+                                <div class="w-3 h-3 bg-red-500/80 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500/80 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500/80 rounded-full"></div>
+                                <span class="text-xs text-gray-500 font-mono pl-2">devstudio.py > mipyme-digital.js</span>
+                            </div>
+                            <pre class="text-xs sm:text-sm font-mono text-gray-400 overflow-x-auto space-y-1">
+        <span class="text-blue-400">const</span> negocioParaguayo = {
+        nombre: <span class="text-teal-300">"Tu Empresa Aquí"</span>,
+        rubro: <span class="text-teal-300">"Pymes / Emprendimientos"</span>,
+        presenciaOnline: <span class="text-yellow-400">true</span>,
+        ventasDigitales: <span class="text-emerald-400">"¡Incrementándose! 📈"</span>
+        };
+
+        <span class="text-purple-400">function</span> <span class="text-blue-400">impulsarDigital</span>(empresa) {
+        <span class="text-purple-400">return</span> DevStudio.buildCustomWebsite({
+            ...empresa,
+            diseño: <span class="text-teal-300">'Moderno y Veloz'</span>,
+            optimizadoParaGoogle: <span class="text-yellow-400">true</span>
+        });
+        }
+                            </pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Servicios -->
+        <section id="servicios" class="py-20 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Encabezado de la sección -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Soluciones digitales a la medida de tu negocio
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        Estructuras ágiles y optimizadas para garantizar el éxito y rendimiento en el entorno digital.
+                    </p>
+                </div>
+
+                <!-- Grilla de Servicios -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Tarjeta 1: Landing Pages -->
+                    <div class="group relative bg-gray-800/40 border border-gray-800 rounded-xl p-6 hover:bg-gray-800/80 hover:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Landing Pages</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-1">Páginas de aterrizaje de alto impacto optimizadas para convertir visitas en clientes potenciales.</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Sitios Corporativos -->
+                    <div class="group relative bg-gray-800/40 border border-gray-800 rounded-xl p-6 hover:bg-gray-800/80 hover:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-teal-500/10 rounded-lg flex items-center justify-center text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v8z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6m-6 0v0a2 2 0 012-2h2a2 2 0 012 2v0m-10 8h10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Sitios Corporativos</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-1">Presencia web institucional sólida y profesional para reflejar la confianza de tu empresa.</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Tiendas Online -->
+                    <div class="group relative bg-gray-800/40 border border-gray-800 rounded-xl p-6 hover:bg-gray-800/80 hover:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300 mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 0a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Tiendas Online</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-1">E-commerce autoadministrables integrados con pasarelas de pago locales para vender 24/7.</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Mantenimiento y Soporte -->
+                    <div class="group relative bg-gray-800/40 border border-gray-800 rounded-xl p-6 hover:bg-gray-800/80 hover:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Mantenimiento y Soporte</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-1">Actualizaciones continuas, copias de seguridad y optimización técnica para tu tranquilidad.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+<!--Agregar Id-->
+        <section style="font-family: Arial, sans-serif; padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
+            <h2 style="font-size: 2rem; color: #333; margin-bottom: 30px;">Planes y Precios</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Tarjeta: Landing -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: #333; margin-top: 0; margin-bottom: 10px;">Landing</h3>
+                        <div style="font-size: 1.8rem; font-weight: bold; color: #0056b3; margin-bottom: 20px;">490.000 Gs</div>
+                        <ul style="list-style-type: none; padding: 0; margin: 0 0 30px 0; line-height: 1.6; color: #666;">
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> 8 horas de desarrollo
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Hosting de 500MB incluido
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Diseño optimizado para conversión
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Soporte técnico básico
+                            </li>
+                        </ul>
+                    </div>
+                    <button style="background-color: #0056b3; color: #fff; border: none; border-radius: 4px; padding: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; text-align: center;">Elegir este plan</button>
+                </div>
+
+                <!-- Tarjeta: Corporativo (Destacado) -->
+                <div style="background-color: #fff; border: 2px solid #0056b3; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 8px 16px rgba(0,54,179,0.1); display: flex; flex-direction: column; justify-content: space-between; text-align: left; position: relative; transform: scale(1.05);">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: #0056b3; color: #fff; padding: 4px 15px; font-size: 0.85rem; font-weight: bold; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Más elegido</div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: #333; margin-top: 10px; margin-bottom: 10px;">Corporativo</h3>
+                        <div style="font-size: 1.8rem; font-weight: bold; color: #0056b3; margin-bottom: 20px;">1.240.000 Gs</div>
+                        <ul style="list-style-type: none; padding: 0; margin: 0 0 30px 0; line-height: 1.6; color: #666;">
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> 20 horas de desarrollo
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Hosting de 200MB incluido
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Ideal para empresas en crecimiento
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Soporte prioritario
+                            </li>
+                        </ul>
+                    </div>
+                    <button style="background-color: #0056b3; color: #fff; border: none; border-radius: 4px; padding: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; text-align: center;">Elegir este plan</button>
+                </div>
+
+                <!-- Tarjeta: Avanzado -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: #333; margin-top: 0; margin-bottom: 10px;">Avanzado</h3>
+                        <div style="font-size: 1.8rem; font-weight: bold; color: #0056b3; margin-bottom: 20px;">2.480.000 Gs</div>
+                        <ul style="list-style-type: none; padding: 0; margin: 0 0 30px 0; line-height: 1.6; color: #666;">
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> 40 horas de desarrollo
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Servidor VPS Linux dedicado
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Máximo rendimiento y control
+                            </li>
+                            <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #28a745;">✓</span> Soporte 24/7 y respaldos avanzados
+                            </li>
+                        </ul>
+                    </div>
+                    <button style="background-color: #0056b3; color: #fff; border: none; border-radius: 4px; padding: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; text-align: center;">Elegir este plan</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="cotizador" class="py-20 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12 space-y-3">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Cotizá tu Proyecto Web
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        Seleccioná un plan base y añadí las funciones extras que tu negocio paraguayo necesita.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    
+                    <div class="md:col-span-2 space-y-8">
+                        
+                        <div class="bg-gray-800/40 border border-gray-800 rounded-xl p-6">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="text-blue-500">1.</span> Seleccioná tu Plan Base
+                            </h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center justify-between p-4 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-blue-500/50 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="plan_base" value="landing" data-precio="490000" checked class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 focus:ring-blue-500 focus:ring-offset-gray-900">
+                                        <span class="text-gray-200 font-medium group-hover:text-white transition-colors">Landing Page</span>
+                                    </div>
+                                    <span class="text-blue-400 font-mono font-bold">490.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-4 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-blue-500/50 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="plan_base" value="corporativo" data-precio="1240000" class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 focus:ring-blue-500 focus:ring-offset-gray-900">
+                                        <span class="text-gray-200 font-medium group-hover:text-white transition-colors">Sitio Corporativo</span>
+                                    </div>
+                                    <span class="text-blue-400 font-mono font-bold">1.240.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-4 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-blue-500/50 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="radio" name="plan_base" value="avanzado" data-precio="2480000" class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 focus:ring-blue-500 focus:ring-offset-gray-900">
+                                        <span class="text-gray-200 font-medium group-hover:text-white transition-colors">Avanzado (VPS Linux)</span>
+                                    </div>
+                                    <span class="text-blue-400 font-mono font-bold">2.480.000 Gs</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/40 border border-gray-800 rounded-xl p-6">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="text-teal-400">2.</span> Añadí Características Adicionales
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-contacto" data-precio="50000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Contacto Avanzado</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+50.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-whatsapp" data-precio="80000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Botón de WhatsApp</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+80.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-seo" data-precio="150000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Optimización SEO</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+150.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-dominio" data-precio="70000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Dominio .com / .com.py</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+70.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-admin" data-precio="300000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Panel Admin (CMS)</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+300.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-ssl" data-precio="950000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">SSL Corporativo</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+950.000 Gs</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg cursor-pointer hover:border-teal-500/40 transition-colors group">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" id="extra-mantenimiento" data-precio="100000" class="w-4 h-4 text-teal-600 bg-gray-700 border-gray-600 rounded focus:ring-teal-500 focus:ring-offset-gray-900">
+                                        <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Mantenimiento</span>
+                                    </div>
+                                    <span class="text-xs text-teal-400 font-mono font-semibold">+100.000 Gs</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="sticky top-24 bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/60 rounded-xl p-6 shadow-2xl backdrop-blur-sm">
+                        <h3 class="text-lg font-bold text-white mb-4 pb-2 border-b border-gray-700/50">
+                            Resumen de Inversión
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-400">Entrega Estimada:</span>
+                                <span class="text-sm text-gray-200 font-medium">5 a 15 días hábiles</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-400">Moneda legal:</span>
+                                <span class="text-sm text-gray-200 font-medium">Guaraníes (Gs)</span>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-700/50 space-y-1">
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Total Presupuestado</span>
+                                <div id="total-cotizacion" class="text-3xl font-mono font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
+                                    490.000 Gs
+                                </div>
+                            </div>
+
+                            <a href="#formulario" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-lg hover:from-blue-500 hover:to-teal-400 shadow-lg transform hover:-translate-y-0.5 transition-all text-sm mt-2">
+                                Continuar con mi Pedido
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="formulario" class="py-20 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-10 space-y-3">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white">
+                        Solicitá tu Presupuesto
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        Dejanos tus datos y nos pondremos en contacto contigo a la brevedad.
+                    </p>
+                </div>
+
+                <div class="bg-gray-800/40 border border-gray-800 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-sm">
+                    
+                    <div id="form-alerta" class="hidden mb-6 p-4 rounded-lg text-sm font-medium"></div>
+
+                    <form id="presupuesto-form" novalidate class="space-y-6">
+                        
+                        <div>
+                            <label for="form-nombre" class="block text-sm font-medium text-gray-300 mb-2">Nombre completo <span class="text-red-500">*</span></label>
+                            <input type="text" id="form-nombre" name="nombre" placeholder="Ej: Juan Pérez" required
+                                class="w-full px-4 py-3 bg-gray-900/60 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="form-correo" class="block text-sm font-medium text-gray-300 mb-2">Correo electrónico <span class="text-red-500">*</span></label>
+                                <input type="email" id="form-correo" name="correo" placeholder="juan@empresa.com.py" required
+                                    class="w-full px-4 py-3 bg-gray-900/60 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="form-telefono" class="block text-sm font-medium text-gray-300 mb-2">Teléfono / WhatsApp <span class="text-red-500">*</span></label>
+                                <input type="tel" id="form-telefono" name="telefono" placeholder="Ej: 0981123456" required
+                                    class="w-full px-4 py-3 bg-gray-900/60 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-plan" class="block text-sm font-medium text-gray-300 mb-2">Plan de interés <span class="text-red-500">*</span></label>
+                            <select id="form-plan" name="plan" required
+                                class="w-full px-4 py-3 bg-gray-900/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-[right_1rem_center] bg-no-repeat">
+                                <option value="" class="bg-gray-800 text-gray-500">Seleccioná una opción</option>
+                                <option value="landing" class="bg-gray-800 text-white">Landing Page (490.000 Gs)</option>
+                                <option value="corporativo" class="bg-gray-800 text-white">Sitio Corporativo (1.240.000 Gs)</option>
+                                <option value="avanzado" class="bg-gray-800 text-white">Avanzado / VPS (2.480.000 Gs)</option>
+                                <option value="personalizado" class="bg-gray-800 text-white">Proyecto a Medida / Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="form-mensaje" class="block text-sm font-medium text-gray-300 mb-2">Mensaje o requerimientos adicionales <span class="text-gray-500 text-xs">(Opcional)</span></label>
+                            <textarea id="form-mensaje" name="mensaje" rows="4" placeholder="Contanos brevemente sobre tu negocio o qué secciones necesitás..."
+                                class="w-full px-4 py-3 bg-gray-900/60 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit"
+                                class="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-lg shadow-lg hover:from-blue-500 hover:to-teal-400 transform hover:-translate-y-0.5 transition-all text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                                Enviar Solicitud de Presupuesto
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer class="bg-gray-950 border-t border-gray-800 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="space-y-4">
+                    <div class="text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                        DevStudio<span class="text-white font-black">.PY</span>
+                    </div>
+                    <p class="text-xs text-gray-500 max-w-xs">
+                        Soluciones de software y desarrollo web a medida para impulsar la transformación digital en Paraguay.
+                    </p>
+                    <div class="space-y-2 pt-2">
+                        <p class="flex items-center gap-2">
+                            <span class="text-blue-500">📍</span> San Lorenzo, Central, Paraguay
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <span class="text-blue-500">📧</span> contacto@devstudio.com.py
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <span class="text-blue-500">📞</span> +595 981 123 456
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-white font-semibold text-base tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="hover:text-white transition-colors duration-200 block py-0.5">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#servicios" class="hover:text-white transition-colors duration-200 block py-0.5">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="#planes" class="hover:text-white transition-colors duration-200 block py-0.5">Planes y Precios</a>
+                        </li>
+                        <li>
+                            <a href="#cotizador" class="hover:text-white transition-colors duration-200 block py-0.5">Cotizador Interactiva</a>
+                        </li>
+                        <li>
+                            <a href="#formulario" class="hover:text-white transition-colors duration-200 block py-0.5">Solicitar Presupuesto</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-white font-semibold text-base tracking-wider">Seguinos en Redes</h4>
+                    <p class="text-xs text-gray-500">
+                        Enterate de nuestros últimos proyectos, consejos de optimización y actualizaciones tecnológicas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 pt-2 font-medium">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors duration-200 flex items-center gap-1.5">
+                            <span>•</span> Facebook
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition-colors duration-200 flex items-center gap-1.5">
+                            <span>•</span> Instagram
+                        </a>
+                        <a href="https://wa.me/595981123456" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition-colors duration-200 flex items-center gap-1.5">
+                            <span>•</span> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-6 border-t border-gray-900 text-center text-xs text-gray-600">
+                <p>© 2026 DevStudio PY. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
