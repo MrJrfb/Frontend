@@ -1,0 +1,30 @@
+#clientes{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#clientes th{
+    background-color: #90070e;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+#clientes td{
+    padding: 6px 8px;
+    border-bottom: 1px solid #c8d5b9fb;
+}
+
+clientes tr:nth-child(even){
+    background-color: #f2f5ee;
+}
+
+
+
+
+
+
+/*Class se usa "." para hacer referencia
+Para etiquetas no es neceserio el punto "."
+*/
